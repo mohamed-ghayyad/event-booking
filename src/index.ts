@@ -1,11 +1,12 @@
-import express, { Request, Response, NextFunction } from 'express';
-import bodyParser from 'body-parser';
+import { Request, Response, NextFunction } from 'express';
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
 import { validationResult, body } from 'express-validator';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 import db from './modules/db.mjs';
-import jwt from 'jsonwebtoken';
-import dotenv from 'dotenv';
-import cron from 'node-cron';
+import * as jwt from 'jsonwebtoken';
+import * as dotenv from 'dotenv';
+import * as cron from 'node-cron';
 
 dotenv.config();
 
