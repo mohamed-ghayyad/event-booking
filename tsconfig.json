@@ -1,0 +1,20 @@
+{
+ "compilerOptions": {
+    "outDir": "./lib",
+    "sourceMap": true,
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "target": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
+    "noFallthroughCasesInSwitch": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*.ts", "test/*.ts", "test/apitest.ts", "src/modules/db.mts"],
+  "exclude": ["node_modules"]
+}

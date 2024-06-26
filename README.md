@@ -61,3 +61,7 @@ While implementing your solution **please take care of the following requirement
 ---
 
 :scroll: **END**
+
+npm install typescript ts-node express sqlite3 bcrypt supertest chai @types/node @types/express @types/sqlite3 @types/supertest @types/mocha @types/chai --save-dev
+
+npm i --save-dev @types/jsonwebtoken jsonwebtoken dotenv

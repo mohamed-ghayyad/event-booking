@@ -1,0 +1,42 @@
+{
+  "name": "dev_event_booking-c66cf82d-ad09-d611-7845-bb20c3167f70",
+  "version": "1.0.0",
+  "description": "Event Booking",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "mocha --config .mocharc.json --timeout 10000",
+    "start": "tsx src/index.ts",
+    "build": "tsc src/index.ts --outDir dist"
+  },
+  "author": "Mohamed",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chai": "^5.1.1",
+    "crypto-random-string": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "expressjs": "^1.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mocha": "^10.5.1",
+    "node-cron": "^3.0.3",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/chai": "^4.3.16",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "^20.14.9",
+    "@types/node-cron": "^3.0.11",
+    "@types/sqlite3": "^3.1.11",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2"
+  }
+}
