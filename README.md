@@ -62,18 +62,12 @@ To get started with the Event Booking System, follow these steps:
         ```env
         SECRET_KEY=your_secret_key
         ```
-
-5. Initialize the database:
-    ```sh
-    npm run init-db
-    ```
-
-6. Build the project:
+5. Build the project:
     ```sh
     npm run build
     ```
 
-7. Start the server:
+6. Start the server:
     ```sh
     npm start
     ```
