@@ -1,67 +1,130 @@
-# Event Booking
+# Event Booking System
 
-[[_TOC_]]
+Welcome to the Event Booking System! This project is designed to help users book events and manage their reservations with ease. It provides user authentication, event management, ticket booking, and periodic notifications for upcoming events.
 
----
+## Table of Contents
 
-:scroll: **START**
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Introduction
 
-In today's fast-paced world, the convenience of booking systems has become an essential aspect of daily life. From booking tickets for a concert or reserving a spot at a conference, these systems are used widely by individuals and businesses alike.
+The Event Booking System is a comprehensive solution for event management and booking. It allows users to register, authenticate, and book tickets for various events. The system also includes periodic notifications for upcoming events and maintains a history/audit log for all activities.
 
----
+## Features
 
-## Task Description
+- User Registration and Authentication
+- Event Creation and Management
+- Ticket Booking
+- Periodic Notifications for Upcoming Events
+- History/Audit Log for Events
+- Validation and Error Handling
+- Secure Password Management
 
-The system will allow users to create, find and reserve tickets for events, view and manage their reservations and to be notified before the event kickoff.
+## Technologies Used
 
-A **user** has:
-- name (limited to 100 characters);
-- email (valid email format);
-- password (minimum 8 characters).
+- Node.js
+- Express.js
+- TypeScript
+- SQLite
+- bcrypt
+- JWT (JSON Web Tokens)
+- Node-cron
 
-An **event** has:
-- name (limited to 100 characters);
-- date (in a valid date format);
-- available attendees count (positive integer limited to 1000);
-- event description (limited to 500 characters).
-- category (Concert, Conference, Game)
+## Installation
 
-Develop a set of REST service APIs based on the swagger file provided - [swagger file](event-booking-swagger.yml), that allows users to:
+To get started with the Event Booking System, follow these steps:
 
-- Create an account;
-- User authentication to log into the system;
-- Create events;
-- Search and reserve tickets for events;
-- Send notification to users before event starts.
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/your-username/event-booking-system.git
+    ```
 
-> Feel free to make assumptions for the design approach. 
+2. Navigate to the project directory:
+    ```sh
+    cd event-booking-system
+    ```
 
-## Requirements
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
 
-While implementing your solution **please take care of the following requirements:**
+4. Set up the environment variables:
+    - Create a `.env` file in the root directory.
+    - Add the following environment variables:
+        ```env
+        SECRET_KEY=your_secret_key
+        ```
 
-### Functional requirements
+5. Initialize the database:
+    ```sh
+    npm run init-db
+    ```
 
-- The REST API methods should be implemented based on the specification provided in the linked swagger file;
-- Add 2 new methods, one to **view** your booked events and one to **cancel** your reservation _**(both should be authorized)**_;
-- Introduce a periodic task to send notifications for upcoming events to users and create history/audit event log for this.
-- No need for UI;
+6. Build the project:
+    ```sh
+    npm run build
+    ```
 
-### Non-functional requirements
+7. Start the server:
+    ```sh
+    npm start
+    ```
 
-- The project MUST be buildable and runnable;
-- The project MUST have Unit tests;
-- The project MUST have a README file with build/run/test instructions (use a DB that can be run locally, e.g. in-memory, via container);
-- Any data required by the application to run (e.g. reference tables, dummy data) MUST be preloaded in the database;
-- Input/output data MUST be in JSON format;
-- Use a framework of your choice, but popular, up-to-date, and long-term support versions are recommended.
+The server will be running on `http://localhost:3000`.
 
----
+## Usage
 
-:scroll: **END**
+### Running Tests
 
-npm install typescript ts-node express sqlite3 bcrypt supertest chai @types/node @types/express @types/sqlite3 @types/supertest @types/mocha @types/chai --save-dev
+To run the tests, use the following command:
+```sh
+npm test
+```
 
-npm i --save-dev @types/jsonwebtoken jsonwebtoken dotenv
+### Building the Project
+To build the project for production, use the following command:
+
+```sh
+npm run build
+```
+### Starting the Server
+To start the server, use the following command:
+
+```sh
+npm start
+```
+### API Endpoints
+Here are some of the key API endpoints available in the Event Booking System:
+
+### User Authentication
+
+ - POST /auth: Authenticate a user and generate a JWT.
+ - POST /users: Register a new user.
+ 
+ ### Event Management
+
+ - POST /events: Create a new event.
+ - GET /events: Get a list of events with optional filters.
+ - GET /events/:eventId/tickets: Get all tickets for a specific event.
+
+### Ticket Booking
+
+ - POST /events/:eventId/tickets: Book a ticket for an event.
+ - PUT /events/:eventId/tickets/:ticketId: Update a ticket.
+ - DELETE /events/:eventId/tickets/:ticketId: Delete a ticket.
+### User Booked Events
+
+ - GET /users/me/booked-events: View booked events for the authenticated user.
+ - DELETE /users/me/booked-events/:eventId: Cancel a reservation for a specific event.
+### Contributing
+We welcome contributions to the Event Booking System! 
+### License
+This project is licensed under the MIT License. See the LICENSE file for details.
